@@ -92,6 +92,7 @@ mod tests;
 pub mod pallet {
     use frame_support::{dispatch::DispatchResult, pallet_prelude::*, traits::Time};
     use frame_system::pallet_prelude::*;
+    use sp_std::prelude::*;
 
     use sp_core::blake2_256;
     use sp_runtime::traits::{IdentifyAccount, Verify};
