@@ -8,27 +8,66 @@ homepage = 'https://substrate.dev'
 repository = 'https://github.com/paritytech/substrate/'
 license = 'Unlicense'
 
-[dependencies]
-codec = { default-features = false, features = ['derive'], package = 'parity-scale-codec', version = '2.0.0' }
-serde = { features = ['derive'], optional = true, version = '1.0.119' }
+[dev-dependencies.serde]
+version = '1.0.119'
 
-frame-support = { default-features = false, version = '3.0.0' }
-frame-system = { default-features = false, version = '3.0.0' }
-pallet-timestamp = { default_features = false, version = '3.0.0' }
-sp-core = { default-features = false, version = '3.0.0' }
-sp-io = { default-features = false, version = '3.0.0' }
-sp-runtime = { default-features = false, version = '3.0.0' }
-sp-std = { default-features = false, version = '3.0.0' }
+[dependencies.codec]
+default-features = false
+features = ['derive']
+package = 'parity-scale-codec'
+version = '2.0.0'
+
+[dependencies.frame-support]
+default-features = false
+git = 'https://github.com/paritytech/substrate.git'
+tag = 'monthly-2021-07'
+version = '3.0.0'
+
+[dependencies.frame-system]
+default-features = false
+git = 'https://github.com/paritytech/substrate.git'
+tag = 'monthly-2021-07'
+version = '3.0.0'
+
+[dependencies.pallet-timestamp]
+default_features = false
+git = 'https://github.com/paritytech/substrate.git'
+tag = 'monthly-2021-07'
+version = '3.0.0'
+
+[dependencies.sp-core]
+default-features = false
+git = 'https://github.com/paritytech/substrate.git'
+tag = 'monthly-2021-07'
+version = '3.0.0'
+
+
+[dependencies.sp-io]
+default-features = false
+git = 'https://github.com/paritytech/substrate.git'
+tag = 'monthly-2021-07'
+version = '3.0.0'
+
+[dependencies.sp-runtime]
+default-features = false
+git = 'https://github.com/paritytech/substrate.git'
+tag = 'monthly-2021-07'
+version = '3.0.0'
+
+[dependencies.sp-std]
+default-features = false
+git = 'https://github.com/paritytech/substrate.git'
+tag = 'monthly-2021-07'
+version = '3.0.0'
 
 [features]
 default = ['std']
 std = [
-	'serde',
 	'codec/std',
 	'frame-support/std',
+	'frame-system/std',
 	'sp-runtime/std',
 	'sp-io/std',
 	'sp-std/std',
-	'frame-system/std',
 	'pallet-timestamp/std',
 ]
