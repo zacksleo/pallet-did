@@ -1,6 +1,6 @@
 use codec::{Decode, Encode};
 use sp_std::vec::Vec;
-use frame_support::{sp_runtime::RuntimeDebug, sp_std::prelude::*};
+use frame_support::{sp_runtime::RuntimeDebug};
 
 /// Attributes or properties that make an identity.
 #[derive(PartialEq, Eq, PartialOrd, Ord, Clone, Encode, Decode, Default, RuntimeDebug)]
