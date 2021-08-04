@@ -19,9 +19,9 @@ frame_support::construct_runtime!(
         NodeBlock = Block,
         UncheckedExtrinsic = UncheckedExtrinsic,
     {
-        System: frame_system::{Module, Call, Config, Storage, Event<T>},
-        DID: pallet_did::{Module, Call, Storage, Event<T>},
-        Timestamp: pallet_timestamp::{Module, Call, Storage, Inherent},
+        System: frame_system::{Pallet, Call, Config, Storage, Event<T>},
+        DID: pallet_did::{Pallet, Call, Storage, Event<T>},
+        Timestamp: pallet_timestamp::{Pallet, Call, Storage, Inherent},
     }
 );
 
@@ -53,6 +53,7 @@ impl system::Config for Test {
     type OnKilledAccount = ();
     type SystemWeightInfo = ();
     type SS58Prefix = SS58Prefix;
+    type OnSetCode = ();
 }
 
 impl frame_system::offchain::SigningTypes for Test {
@@ -96,7 +97,7 @@ impl pallet_did::Config for Test {
     type Event = Event;
     type Public = sr25519::Public;
     type Signature = sr25519::Signature;
-    type Time = pallet_timestamp::Module<Test>;
+    type Time = pallet_timestamp::Pallet<Test>;
 }
 
 // Build genesis storage according to the mock runtime.

@@ -1,5 +1,5 @@
 use crate::did::Did;
-use crate::{mock::*, AttributeTransaction, Error};
+use crate::{mock::*, types::*, Error};
 use codec::Encode;
 use frame_support::{assert_noop, assert_ok};
 use sp_core::Pair;
